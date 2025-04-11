@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulation App</title>
+	
+	<style>
+		input {
+			margin-top: 4pt;
+		}
+	</style>
+</head>
+<body>
+    <h1>Run Simulation</h1>
+    <form method="post" action="/simulate">
+        <label>tau1:</label><input type="number" step="0.01" name="tau1" value="1.25"><br>
+        <label>tau2:</label><input type="number" step="0.01" name="tau2" value="2"><br>
+        <label>tau:</label><input type="number" step="0.01" name="tau" value="2.85"><br>
+        <label>a1:</label><input type="number" step="0.01" name="a1" value="0.4"><br>
+        <label>r1:</label><input type="number" step="0.01" name="r1" value="1.2"><br>
+        <label>K1:</label><input type="number" step="0.01" name="K1" value="0.8"><br>
+        <label>a2:</label><input type="number" step="0.01" name="a2" value="0.3"><br>
+        <label>r2:</label><input type="number" step="0.01" name="r2" value="1.4"><br>
+        <label>K2:</label><input type="number" step="0.01" name="K2" value="0.9"><br>
+        <label>b1:</label><input type="number" step="0.01" name="b1" value="0.6"><br>
+        <label>r:</label><input type="number" step="0.01" name="r" value="1.3"><br>
+        <label>K:</label><input type="number" step="0.01" name="K" value="1.0"><br>
+        <label>N1_0:</label><input type="number" step="0.01" name="N1_0" value="0.2"><br>
+        <label>N2_0:</label><input type="number" step="0.01" name="N2_0" value="0.3"><br>
+        <label>N_0:</label><input type="number" step="0.01" name="N_0" value="0.5"><br>
+        <button type="submit">Run Simulation</button>
+    </form>
+
+    {% if plot_url %}
+        <h2>Simulation Plot:</h2>
+        <img src="{{ plot_url }}" alt="Simulation Plot">
+    {% endif %}
+</body>
+</html>
